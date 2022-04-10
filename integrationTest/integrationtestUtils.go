@@ -19,10 +19,8 @@ func RunTestWithIntegrationServerGin(testFunc func(port string)) {
 	config.LoadViperConfig("../envs/", "isolation")
 	DBConfig := config.BuildDBConfig()
 	server, port := createTestServerGin(DBConfig)
-	idAccounts := createAccountForTests(DBConfig)
-	defer deleteAccountForTests(DBConfig, idAccounts)
-	idUsers := createUserForTest(DBConfig)
-	defer deleteUsersForTests(DBConfig, idUsers)
+	createUserForTest(DBConfig)
+	defer deleteUsersForTests(DBConfig)
 	go server.Start()
 	testFunc(port)
 	server.Stop()
@@ -33,52 +31,6 @@ func createTestServerGin(DBConfig config.MongoCofig) (port.Server, string) {
 	port := "11082"
 	serverConfig := handler.BuildServerConfigGin(port, "testKey", DBConfig)
 	return handler.NewGinServer(serverConfig), port
-}
-
-func createAccountForTests(dbConfig config.MongoCofig) []interface{} {
-	collection := dbConfig.DB.Database(dbConfig.DatabaseName).Collection(model.ACCOUNT_COLLECTION)
-
-	account1 := model.Account{
-		AccountNumber: "account1Number",
-		Balance:       100,
-		Transactions: []model.Transaction{{
-			AccountTo: "account1Number",
-			Amount:    100,
-			Type:      model.DepositType,
-		}},
-	}
-	account2 := model.Account{
-		AccountNumber: "account2Number",
-		Balance:       100,
-		Transactions: []model.Transaction{{
-			AccountTo: "account1Number",
-			Amount:    50,
-			Type:      model.DepositType,
-		}, {
-			AccountTo: "account1Number",
-			Amount:    50,
-			Type:      model.DepositType,
-		}},
-	}
-	resultID1, error1 := collection.InsertOne(context.TODO(), account1)
-	resultID2, error2 := collection.InsertOne(context.TODO(), account2)
-	if error1 != nil {
-		println(error1)
-		panic(error1)
-	}
-	if error2 != nil {
-		println(error1)
-		panic(error1)
-	}
-	result := []interface{}{
-		resultID1.InsertedID, resultID2.InsertedID,
-	}
-	return result
-
-}
-
-func deleteAccountForTests(dbConfig config.MongoCofig, idaToDelte []interface{}) {
-	dbConfig.DB.Database(dbConfig.DatabaseName).Collection(model.ACCOUNT_COLLECTION).DeleteMany(context.TODO(), nil)
 }
 
 func createUserForTest(dbConfig config.MongoCofig) []interface{} {
@@ -103,7 +55,7 @@ func createUserForTest(dbConfig config.MongoCofig) []interface{} {
 
 }
 
-func deleteUsersForTests(dbConfig config.MongoCofig, idaToDelte []interface{}) {
+func deleteUsersForTests(dbConfig config.MongoCofig) {
 	dbConfig.DB.Database(dbConfig.DatabaseName).Collection(model.USER_COLLECTION).DeleteMany(context.TODO(), nil)
 
 }

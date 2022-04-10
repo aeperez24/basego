@@ -2,7 +2,6 @@ package handler
 
 import (
 	"aeperez24/basego/dto"
-	"aeperez24/basego/port"
 	"encoding/json"
 	"net/http"
 
@@ -20,14 +19,7 @@ func respondWithJSONGin(c *gin.Context, code int, payload interface{}) {
 	c.JSON(code, dto.ResponseDto{Data: payload})
 }
 
-type HandlerConfig struct {
-	AccountHandler        port.AccountHandler
-	UserHandler           port.UserHandler
-	AuthenticationHandler port.AuthenticationHandler
-}
-
 type HandlerConfigGin struct {
-	AccountHandler        GinAccountHandlerImpl
 	AuthenticationHandler GinAutenticationHandlerImpl
 	UserHandler           GinUserHandlerImpl
 }

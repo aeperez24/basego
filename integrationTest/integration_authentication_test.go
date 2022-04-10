@@ -22,9 +22,6 @@ func TestAuthUser(t *testing.T) {
 		collectionUser := dbConfig.DB.Database(dbConfig.DatabaseName).Collection(model.USER_COLLECTION)
 		defer collectionUser.DeleteOne(context.TODO(), bson.M{"username": username})
 
-		collectionAccount := dbConfig.DB.Database(dbConfig.DatabaseName).Collection(model.ACCOUNT_COLLECTION)
-		defer collectionAccount.DeleteOne(context.TODO(), bson.M{"accountnumber": document})
-
 		userdto := dto.UserWithPasswordDto{
 			BasicUserDto: dto.BasicUserDto{
 				Username:   username,

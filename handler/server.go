@@ -29,11 +29,7 @@ func NewGinServer(config ServerConfigurationGin) port.Server {
 
 func (mserver GinServerImpl) Start() error {
 	router := gin.Default()
-	authMiddleware := mserver.MiddlewareConfigGin.AuthenticationMiddleware
-	router.GET("/account/balance/:accountNumber", authMiddleware, mserver.HandlerConfig.AccountHandler.GetBalance)
-	router.GET("/transaction/:accountNumber", authMiddleware, mserver.HandlerConfig.AccountHandler.GetTransactions)
-	router.POST("/account/transfer", authMiddleware, mserver.HandlerConfig.AccountHandler.TransferMoney)
-	router.POST("/account/deposit", authMiddleware, mserver.HandlerConfig.AccountHandler.Deposit)
+	//authMiddleware := mserver.MiddlewareConfigGin.AuthenticationMiddleware
 	router.POST("/user/signin", mserver.HandlerConfig.AuthenticationHandler.Authenticate)
 	router.POST("/user/signup", mserver.HandlerConfig.UserHandler.CreateUser)
 

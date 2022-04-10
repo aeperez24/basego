@@ -1,8 +1,8 @@
 package test
 
 import (
-	"aeperez24/banksimulator/dto"
-	"aeperez24/banksimulator/services"
+	"aeperez24/basego/dto"
+	"aeperez24/basego/services"
 	"fmt"
 	"testing"
 

@@ -1,6 +1,6 @@
 package test
 
-import "aeperez24/banksimulator/model"
+import "aeperez24/basego/model"
 
 type UserRepositoryMock struct {
 	FindUserByNameFn       func(username string) model.User

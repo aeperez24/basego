@@ -1,9 +1,9 @@
 package services
 
 import (
-	"aeperez24/banksimulator/dto"
-	"aeperez24/banksimulator/model"
-	"aeperez24/banksimulator/port"
+	"aeperez24/basego/dto"
+	"aeperez24/basego/model"
+	"aeperez24/basego/port"
 	"crypto/sha256"
 	"errors"
 	"fmt"

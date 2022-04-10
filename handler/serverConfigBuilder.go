@@ -1,11 +1,11 @@
 package handler
 
 import (
-	"aeperez24/banksimulator/config"
-	"aeperez24/banksimulator/middleware"
-	"aeperez24/banksimulator/model"
-	"aeperez24/banksimulator/services"
-	"aeperez24/banksimulator/usercase"
+	"aeperez24/basego/config"
+	"aeperez24/basego/middleware"
+	"aeperez24/basego/model"
+	"aeperez24/basego/services"
+	"aeperez24/basego/usercase"
 )
 
 func BuildServerConfigGin(portNumber string, tokenKey string, mongo config.MongoCofig) ServerConfigurationGin {

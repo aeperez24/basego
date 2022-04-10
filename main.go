@@ -1,8 +1,8 @@
 package main
 
 import (
-	"aeperez24/banksimulator/config"
-	"aeperez24/banksimulator/handler"
+	"aeperez24/basego/config"
+	"aeperez24/basego/handler"
 	"log"
 	"os"
 )

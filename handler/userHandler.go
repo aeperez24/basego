@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"aeperez24/banksimulator/dto"
-	"aeperez24/banksimulator/usercase"
+	"aeperez24/basego/dto"
+	"aeperez24/basego/usercase"
 
 	"github.com/gin-gonic/gin"
 )

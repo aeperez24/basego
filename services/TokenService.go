@@ -1,8 +1,8 @@
 package services
 
 import (
-	"aeperez24/banksimulator/dto"
-	"aeperez24/banksimulator/port"
+	"aeperez24/basego/dto"
+	"aeperez24/basego/port"
 	"fmt"
 	"time"
 

@@ -1,8 +1,8 @@
 package port
 
 import (
-	"aeperez24/banksimulator/dto"
-	"aeperez24/banksimulator/model"
+	"aeperez24/basego/dto"
+	"aeperez24/basego/model"
 	"net/http"
 )
 

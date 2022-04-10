@@ -1,4 +1,4 @@
-module aeperez24/banksimulator
+module aeperez24/basego
 
 go 1.13
 

@@ -1,12 +1,12 @@
 package integrationtest
 
 import (
-	"aeperez24/banksimulator/config"
-	"aeperez24/banksimulator/dto"
-	"aeperez24/banksimulator/handler"
-	"aeperez24/banksimulator/model"
-	"aeperez24/banksimulator/port"
-	"aeperez24/banksimulator/services"
+	"aeperez24/basego/config"
+	"aeperez24/basego/dto"
+	"aeperez24/basego/handler"
+	"aeperez24/basego/model"
+	"aeperez24/basego/port"
+	"aeperez24/basego/services"
 	"bytes"
 	"context"
 	"encoding/json"

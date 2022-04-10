@@ -1,8 +1,8 @@
 package services
 
 import (
-	"aeperez24/banksimulator/model"
-	"aeperez24/banksimulator/port"
+	"aeperez24/basego/model"
+	"aeperez24/basego/port"
 	"errors"
 	"log"
 )

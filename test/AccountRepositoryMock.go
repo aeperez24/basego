@@ -1,7 +1,7 @@
 package test
 
 import (
-	"aeperez24/banksimulator/model"
+	"aeperez24/basego/model"
 
 	"github.com/stretchr/testify/mock"
 )

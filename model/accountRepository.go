@@ -1,7 +1,7 @@
 package model
 
 import (
-	"aeperez24/banksimulator/config"
+	"aeperez24/basego/config"
 	"context"
 
 	"log"

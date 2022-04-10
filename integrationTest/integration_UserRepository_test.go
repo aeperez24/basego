@@ -1,8 +1,8 @@
 package integrationtest
 
 import (
-	"aeperez24/banksimulator/config"
-	"aeperez24/banksimulator/model"
+	"aeperez24/basego/config"
+	"aeperez24/basego/model"
 	"context"
 	"testing"
 

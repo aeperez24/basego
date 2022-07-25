@@ -35,5 +35,4 @@ func main() {
 		println(err)
 		panic(err)
 	}
-	server.Start()
 }
